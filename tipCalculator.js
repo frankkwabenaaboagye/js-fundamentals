@@ -13,3 +13,22 @@ tipCalculator('good', 100) // Should return 20
 
 
 */
+
+
+const tipCalculator = (quality, total) => {
+  switch(quality){
+    case 'bad':
+      return 0.05*total;
+    case 'ok':
+      return 0.15*total;
+    case 'good':
+      return 0.2*total;
+    case 'excellent':
+      return 0.3*total;
+    default:
+      return 0.18*total;
+  }
+}
+
+
+console.log(tipCalculator('good', 100)) //should return 20

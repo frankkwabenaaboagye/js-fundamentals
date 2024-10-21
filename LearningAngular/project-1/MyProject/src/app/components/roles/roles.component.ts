@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class RolesComponent {
 
+
+  firstName: string  = "Frank";
+  id: number = 9;
+  isSingle: boolean = true;
+  sysRole: "admin" | "user" = "admin"
+
+
 }

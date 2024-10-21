@@ -1,5 +1,6 @@
 /*
 Primitive type = string, number, boolean
+others: Array
 
 Create your own type:
     - by conversion start with a lowercase letter
@@ -38,6 +39,12 @@ Create your own type:
                 }
       // you can use the Person type, but the address will be optional
 
+  - Union
+    - if you want a variable to be some specific values
+
+    type UserRole = "admin" | "user" | "client";
+    const rubyRole: UserRole = "user" ; // anything apart from those 3 up there would not be best
+
 * */
 
 
@@ -46,9 +53,8 @@ type SingleMenu = {
     price: number
 }
 
-type Menu =
 
-const menu = [
+const menu: Array<SingleMenu> = [
     {name: "peach", price: 9},
     {name: "fries", price: 17},
     {name: "soy", price: 20.4},
@@ -62,7 +68,7 @@ const addNew = (aMenu: SingleMenu) => {
 
 let cashInRegister = 100;
 
-const placeOrder = (menuName) => {
+const placeOrder = (menuName: string) => {
     let ans  = {}
     for(let i=0; i<menu.length; i++){
         if(menu[i].name === menuName){
@@ -76,9 +82,9 @@ const placeOrder = (menuName) => {
     return ans;
 }
 
-const placeOrder2 = (menuName) => {
+const placeOrder2 = (menuName: string) => {
     let ans  = {}
-    let menuObj =  menu.find((obj: SingleMenu)=> obj.name === menuName)
+    const menuObj: SingleMenu =  menu.find(obj => obj.name === menuName);
     cashInRegister += menuObj.price;
     ans  = {theMenu: menuObj, status: "ordered"  }
     orderQueue.push(ans);

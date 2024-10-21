@@ -45,6 +45,13 @@ Create your own type:
     type UserRole = "admin" | "user" | "client";
     const rubyRole: UserRole = "user" ; // anything apart from those 3 up there would not be best
 
+    function add(theVal : number | string){
+        // then handle the case for a number and handle the case for string
+    }
+
+----------
+-> you can throw new TypeError or new Error, e.t.c
+
 * */
 
 

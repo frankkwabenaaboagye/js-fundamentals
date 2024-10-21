@@ -5,13 +5,17 @@ Create your own type:
     - by conversion start with a lowercase letter
     - do this around objects
 
+                // you can leave out the comma at the end - but just be consistent
                 type Person = {
                     name: string,
                     age: number,
-                    isSingle: boolean
-                    address: {
-                        country: string
-                    }
+                    isSingle: boolean,
+                    address: Address
+                }
+
+
+                type Address = {
+                     country: string
                 }
 
                 let paul: Person = {
@@ -22,6 +26,17 @@ Create your own type:
                         country: "Singapore"
                     }
                 }
+
+    - if you want something to be optional use the ?
+    e.g.
+
+        type Person = {
+                    name: string,
+                    age: number,
+                    isSingle: boolean,
+                    address?: Address
+                }
+      // you can use the Person type, but the address will be optional
 
 * */
 

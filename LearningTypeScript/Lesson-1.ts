@@ -207,13 +207,29 @@ tryingOutOmit(ab)
 
 
 // spread in js
-const theVar = {...ruby}
-console.log(theVar)
+// const theVar = {...ruby}
+// console.log(theVar)
 
 
+// -------------------------
 
+// Generics
+/*
+say we want to return the last item of any array, it
+could be a string arr, number arr, e.t.c.
+ */
 
+const ages: number[] = [3, 6,7 ];
+const names: string[] = ["sam", 'peter']
 
+function getLastItem<T>(anyArray: T[]):T{
+
+    return anyArray[anyArray.length - 1];
+
+}
+
+console.log("generics => ", getLastItem(ages))
+console.log("generics => ", getLastItem(names))
 
 
 

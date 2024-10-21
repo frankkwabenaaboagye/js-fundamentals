@@ -8,6 +8,8 @@ Partial - takes the type and return a new types where all the properties are opt
     - this comes in handy if say you want to perform an update an not
         all the fields are compulsory
 
+Omit - takes in the type and removes or omits some types we specify
+
 Create your own type:
     - by conversion start with a lowercase letter
     - do this around objects
@@ -112,17 +114,6 @@ export default menu;
 import menu, { orderQueue } from './module';
 
 * */
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var menu = [
     { name: "peach", price: 9 },
     { name: "fries", price: 17 },
@@ -162,10 +153,33 @@ function updatePerson(aPerson) {
     aPerson.name = "default name";
     return aPerson;
 }
+// what we pass into this a Person, but the property age... will not be there
+function tryingOutOmit(aPerson) {
+    // do whatever we want
+}
+// if we want to omit more things
+function tryingOutOmit2(aPerson) {
+    // do whatever we want
+}
+var ab = { name: "Ab" };
+tryingOutOmit(ab);
 // const allPersons: Person[] = [ruby];
 //
 // var ans = updatePerson(ruby)
 // console.log(ans);
 // spread in js
-var theVar = __assign({}, ruby);
-console.log(theVar);
+// const theVar = {...ruby}
+// console.log(theVar)
+// -------------------------
+// Generics
+/*
+say we want to return the last item of any array, it
+could be a string arr, number arr, e.t.c.
+ */
+var ages = [3, 6, 7];
+var names = ["sam", 'peter'];
+function getLastItem(anyArray) {
+    return anyArray[anyArray.length - 1];
+}
+console.log("generics => ", getLastItem(ages));
+console.log("generics => ", getLastItem(names));

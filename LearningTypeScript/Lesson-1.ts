@@ -8,6 +8,8 @@ Partial - takes the type and return a new types where all the properties are opt
     - this comes in handy if say you want to perform an update an not
         all the fields are compulsory
 
+Omit - takes in the type and removes or omits some types we specify
+
 Create your own type:
     - by conversion start with a lowercase letter
     - do this around objects
@@ -182,7 +184,39 @@ function updatePerson(aPerson: Partial<Person>): Person | Partial<Person> {
 }
 
 
-const allPersons: Person[] = [ruby];
+// what we pass into this a Person, but the property age... will not be there
+function tryingOutOmit(aPerson: Omit<Person, "age">) {
+    // do whatever we want
+}
 
-var ans = updatePerson(ruby)
-console.log(ans);
+// if we want to omit more things
+
+function tryingOutOmit2(aPerson: Omit<Person, "age" | "name">) {
+    // do whatever we want
+}
+
+const ab = {name: "Ab"};
+
+tryingOutOmit(ab)
+
+
+// const allPersons: Person[] = [ruby];
+//
+// var ans = updatePerson(ruby)
+// console.log(ans);
+
+
+// spread in js
+const theVar = {...ruby}
+console.log(theVar)
+
+
+
+
+
+
+
+
+
+
+

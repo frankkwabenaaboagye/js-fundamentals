@@ -1,6 +1,12 @@
 /*
 Primitive type = string, number, boolean
-others: Array, any (limit its usage)
+others: undefined, Array, any (limit its usage), void
+
+utility types
+
+Partial - takes the type and return a new types where all the properties are optional
+    - this comes in handy if say you want to perform an update an not
+        all the fields are compulsory
 
 Create your own type:
     - by conversion start with a lowercase letter
@@ -152,7 +158,31 @@ const placeOrder2 = (menuName: string) => {
 }
 
 
-placeOrder2("soy");
+// placeOrder2("soy");
+//
+// console.log(orderQueue);
 
-console.log(orderQueue);
+// partial
+type Person = {
+    name: string,
+    age: number
+}
 
+var ruby: Person = {
+    name: "Ruby",
+    age: 12
+}
+
+
+function updatePerson(aPerson: Partial<Person>): Person | Partial<Person> {
+    aPerson.name = "default name";
+
+    return aPerson;
+
+}
+
+
+const allPersons: Person[] = [ruby];
+
+var ans = updatePerson(ruby)
+console.log(ans);

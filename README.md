@@ -309,7 +309,7 @@ console.log(newRobot);
 ```
 
 
--  iterators
+- higher order functions
   - fnx as data
 ```js
 const checkThatTwoPlusTwoEqualsFourAMillionTimes = () => {
@@ -356,11 +356,72 @@ higherOrderFunc(() => {
 
 ```
 
+- iterators
+  - The built-in JavaScript array methods that help us iterate are called iteration methods, at times referred to as `iterators`
+
+
+
+```js
+
+const artists = ['Picasso', 'Kahlo', 'Matisse', 'Utamaro'];
+
+artists.forEach(artist => {
+  console.log(artist + ' is one of my favorite artists.');
+});
+
+const numbers = [1, 2, 3, 4, 5];
+
+const squareNumbers = numbers.map(number => {
+  return number * number;
+});
+
+console.log(squareNumbers);
+
+const things = ['desk', 'chair', 5, 'backpack', 3.14, 100];
+
+const onlyNumbers = things.filter(thing => {
+  return typeof thing === 'number';
+});
+
+console.log(onlyNumbers);
+
+```
+
+```js
+groceries.forEach(groceryItem => console.log(groceryItem));
+
+// or
+
+function printGrocery(element){
+  console.log(element);
+}
+
+groceries.forEach(printGrocery);
 
 
 
 
+// other examples
 
+const randomNumbers = [375, 200, 3.14, 7, 13, 852];
+
+// Call .filter() on randomNumbers below
+const smallNumbers = randomNumbers.filter((number)=>{
+  return number < 250;
+});
+
+const favoriteWords = ['nostalgia', 'hyperbole', 'fervent', 'esoteric', 'serene'];
+
+
+// Call .filter() on favoriteWords below
+const longFavoriteWords = favoriteWords.filter((favoriteWord)=>{
+  return favoriteWord.length > 7
+});
+
+console.log(longFavoriteWords)
+
+
+```
 
 
 

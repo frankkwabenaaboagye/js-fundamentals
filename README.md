@@ -166,4 +166,99 @@ console.log(robot.numOfSensors)
 
 ```
 
+- Factory Function
+ - A factory function is a function that returns an object and can be reused to make multiple object instances
+
+```js
+
+const monsterFactory = (name, age, energySource, catchPhrase) => {
+  return { 
+    name: name,
+    age: age, 
+    energySource: energySource,
+    scare() {
+      console.log(catchPhrase);
+    } 
+  }
+};
+
+// usage
+const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!');
+ghost.scare(); // 'BOO!'
+
+With monsterFactory in place, we don’t have to create an object
+literal every time we need a new monster
+
+
+const robotFactory = (model,mobile) => {
+
+  return {
+    model: model,
+    mobile: mobile,
+    beep: () => {
+      console.log('Beep Boop');
+    }
+  }
+
+};
+
+const tinCan = robotFactory('P-500', true);
+
+tinCan.beep();
+
+
+/*
+
+destructuring technique, called property value shorthand,
+to save ourselves some keystrokes
+
+
+const monsterFactory = (name, age) => {
+  return { 
+    name: name,
+    age: age
+  }
+};
+
+to
+
+const monsterFactory = (name, age) => {
+  return { 
+    name,
+    age 
+  }
+};
+
+
+*/
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

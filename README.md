@@ -18,3 +18,14 @@ for (const char of username) {
 
 
 ```
+
+```js
+
+let returnAnyProp = (objectName, propName) => objectName[propName];
+ 
+returnAnyProp(spaceship, 'homePlanet'); // Returns 'Earth'
+
+
+If we tried to write our returnAnyProp() function with dot notation (objectName.propName)
+the computer would look for a key of 'propName' on our object and not the value of the propName parameter.
+```

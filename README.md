@@ -326,9 +326,35 @@ const isTwoPlusTwo = checkThatTwoPlusTwoEqualsFourAMillionTimes;
 console.log(isTwoPlusTwo.name); // logs checkThatTwoPlusTwoEqualsFourAMillionTimes
 ```
 
+- functions can accept other functions as parameters
+- A higher-order function is a function that either accepts functions as parameters, returns a function, or both!
+- We call functions that get passed in as parameters callback functions.
+- With callback functions, we pass in the function itself by typing the function name without the parentheses
+
+```js
+
+const higherOrderFunc = param => {
+  param();
+  return `I just invoked ${param.name} as a callback function!`
+}
+ 
+const anotherFunc = () => {
+  return 'I\'m being invoked by the higher-order function!';
+}
+
+higherOrderFunc(anotherFunc);
 
 
+// you can pass in anonymous fnx as well
 
+higherOrderFunc(() => {
+  for (let i = 0; i <= 10; i++){
+    console.log(i);
+  }
+});
+
+
+```
 
 
 

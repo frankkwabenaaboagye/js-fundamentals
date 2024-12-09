@@ -58,5 +58,10 @@ ES6 (you can remove the ":")
 
 
 ```
+- Objects are passed by reference.
+
+```js
+
+```
 
 

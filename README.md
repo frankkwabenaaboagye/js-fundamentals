@@ -59,9 +59,21 @@ ES6 (you can remove the ":")
 
 ```
 - Objects are passed by reference.
+- iterating Objects
 
 ```js
+const object = { a: 1, b: 2, c: 3 };
 
+for (const property in object) {
+  console.log(`${property}: ${object[property]}`);
+}
+
+// Expected output:
+// "a: 1"
+// "b: 2"
+// "c: 3"
 ```
+
+- Advanced Objects
 
 

@@ -75,5 +75,21 @@ for (const property in object) {
 ```
 
 - Advanced Objects
+- Avoid using arrow functions when using this in a method!
+
+```js
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet: () => {
+    console.log(this.dietType);
+  }
+};
+
+goat.diet(); // Prints undefined
+
+```
 
 

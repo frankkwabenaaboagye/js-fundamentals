@@ -206,7 +206,11 @@ const tinCan = robotFactory('P-500', true);
 
 tinCan.beep();
 
+```
 
+- property value shorthand
+
+```js
 /*
 
 destructuring technique, called property value shorthand,
@@ -233,8 +237,76 @@ const monsterFactory = (name, age) => {
 */
 ```
 
+- a destructuring technique called destructured assignment
+- create a variable with the name of an object’s key
+- that is wrapped in curly braces { } and assign to it the object.
+```js
+
+const vampire = {
+  name: 'Dracula',
+  residence: 'Transylvania',
+  preferences: {
+    day: 'stay inside',
+    night: 'satisfy appetite'
+  }
+};
 
 
+const { residence } = vampire; 
+console.log(residence); // Prints 'Transylvania'
+
+
+const { day } = vampire.preferences; 
+console.log(day); // Prints 'stay inside'
+
+// ----
+
+
+const robot = {
+  model: '1E78V2',
+  energyLevel: 100,
+  functionality: {
+    beep() {
+      console.log('Beep Boop');
+    },
+    fireLaser() {
+      console.log('Pew Pew');
+    },
+  }
+};
+
+
+const {functionality} = robot;
+
+functionality.beep();
+```
+
+- built in
+
+```js
+const robot = {
+	model: 'SAL-1000',
+  mobile: true,
+  sentient: false,
+  armor: 'Steel-plated',
+  energyLevel: 75
+};
+
+// What is missing in the following method call?
+const robotKeys = Object.keys(robot);
+
+console.log(robotKeys);
+
+// Declare robotEntries below this line:
+const robotEntries = Object.entries(robot);
+
+console.log(robotEntries);
+
+// Declare newRobot below this line:
+const newRobot = Object.assign({laserBlaster: true, voiceRecognition: true}, robot)
+
+console.log(newRobot);
+```
 
 
 

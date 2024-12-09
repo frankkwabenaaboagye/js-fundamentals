@@ -1,3 +1,7 @@
+- Arrays
+- String
+- Objects
+
 
 ```js
 const hobbies = ['singing', 'eating', 'quidditch', 'writing'];
